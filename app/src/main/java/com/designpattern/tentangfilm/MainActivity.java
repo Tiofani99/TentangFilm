@@ -20,6 +20,8 @@ import com.designpattern.tentangfilm.menu.DrawerAdapter;
 import com.designpattern.tentangfilm.menu.DrawerItem;
 import com.designpattern.tentangfilm.menu.SimpleItem;
 import com.designpattern.tentangfilm.menu.SpaceItem;
+import com.designpattern.tentangfilm.ui.favorite.FavoriteFragment;
+import com.designpattern.tentangfilm.ui.home.HomeFragment;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
@@ -96,10 +98,15 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         switch (position) {
 
             case POS_DASHBOARD:
+                HomeFragment homeFragment = new HomeFragment();
+                showFragment(homeFragment);
 
                 break;
 
             case POS_ACCOUNT:
+                state = true;
+                FavoriteFragment favoriteFragment = new FavoriteFragment();
+                showFragment(favoriteFragment);
 
                 break;
 
@@ -124,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             tv1.setVisibility(View.VISIBLE);
         } else {
             tv1.setVisibility(View.GONE);
-            toolbar.setTitle(titleBar);
+            toolbar.setTitle(" ");
         }
     }
 
