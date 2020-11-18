@@ -33,7 +33,48 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //Sliding Root
+    implementation 'com.yarolegovich:sliding-root-nav:1.1.1'
+
+    //Circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    //ButterKnife
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    //gson
+    // retrofit, gson
+    implementation "com.google.code.gson:gson: $gsonVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$converterGsonVersion"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+
+    //facebook shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.4.0@aar'
+
+    testImplementation "androidx.arch.core:core-testing:$archLifecycleVersion"
+
+    //IdlingResource
+    implementation "androidx.test.espresso:espresso-idling-resource:$idleResourceVersion"
+
+    //Room
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+
+    //Pagination
+    implementation "androidx.paging:paging-runtime:$pagingVersion"
+
+
+
+
+
 }

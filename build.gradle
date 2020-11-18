@@ -22,3 +22,17 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    gsonVersion = '2.8.6'
+    converterGsonVersion = '2.7.0'
+    retrofitVersion = '2.7.1'
+
+    idleResourceVersion = '3.2.0'
+
+    mockitoVersion = '3.1.0'
+    roomVersion = '2.2.3'
+    pagingVersion = '2.1.2'
+
+    archLifecycleVersion = '2.1.0'
+}
