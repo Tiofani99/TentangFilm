@@ -48,4 +48,22 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/black"
+        android:background="@drawable/bg_round_bottom_right"
+        app:fabAlignmentMode="center"
+        app:fabAnimationMode="slide"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/bottom_app_bar"
+        android:layout_gravity="center"
+        android:id="@+id/fab"
+        />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
