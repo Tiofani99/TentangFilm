@@ -23,6 +23,9 @@ public interface MovieDao {
     @Query("SELECT * from movie WHERE id = :id")
     LiveData<Movie> getMovieById(String id);
 
+    @Query("SELECT * from movie WHERE state_popular = 1")
+    DataSource.Factory<Integer, Movie> getMoviePopular();
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertMovieFavorite(List<Movie> movies);
 

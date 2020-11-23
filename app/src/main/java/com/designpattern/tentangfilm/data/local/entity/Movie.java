@@ -43,8 +43,11 @@ public class Movie implements Parcelable {
     @ColumnInfo(name = "bookmarked")
     private boolean bookmarked = false;
 
+    @ColumnInfo(name = "state_popular")
+    private boolean state_popular = false;
 
-    public Movie(String id, String title, String img, String vote_count, Double vote_avg, String desc, String release_date, Double popularity, boolean bookmarked, String backdrop_path) {
+
+    public Movie(@NonNull String id, String title, String img, String vote_count, Double vote_avg, String desc, String release_date, Double popularity, String backdrop_path, boolean bookmarked, boolean state_popular) {
         this.id = id;
         this.title = title;
         this.img = img;
@@ -53,10 +56,33 @@ public class Movie implements Parcelable {
         this.desc = desc;
         this.release_date = release_date;
         this.popularity = popularity;
-        this.bookmarked = bookmarked;
         this.backdrop_path = backdrop_path;
+        this.bookmarked = bookmarked;
+        this.state_popular = state_popular;
     }
 
+
+    protected Movie(Parcel in) {
+        id = in.readString();
+        title = in.readString();
+        img = in.readString();
+        vote_count = in.readString();
+        if (in.readByte() == 0) {
+            vote_avg = null;
+        } else {
+            vote_avg = in.readDouble();
+        }
+        desc = in.readString();
+        release_date = in.readString();
+        if (in.readByte() == 0) {
+            popularity = null;
+        } else {
+            popularity = in.readDouble();
+        }
+        backdrop_path = in.readString();
+        bookmarked = in.readByte() != 0;
+        state_popular = in.readByte() != 0;
+    }
 
     public static final Creator<Movie> CREATOR = new Creator<Movie>() {
         @Override
@@ -132,27 +158,13 @@ public class Movie implements Parcelable {
         this.backdrop_path = backdrop_path;
     }
 
-    protected Movie(Parcel in) {
-        id = in.readString();
-        title = in.readString();
-        img = in.readString();
-        vote_count = in.readString();
-        if (in.readByte() == 0) {
-            vote_avg = null;
-        } else {
-            vote_avg = in.readDouble();
-        }
-        desc = in.readString();
-        release_date = in.readString();
-        if (in.readByte() == 0) {
-            popularity = null;
-        } else {
-            popularity = in.readDouble();
-        }
-        backdrop_path = in.readString();
+    public boolean isState_popular() {
+        return state_popular;
     }
 
-
+    public void setState_popular(boolean state_popular) {
+        this.state_popular = state_popular;
+    }
 
     @Override
     public int describeContents() {
@@ -161,6 +173,7 @@ public class Movie implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+
         parcel.writeString(id);
         parcel.writeString(title);
         parcel.writeString(img);
@@ -180,5 +193,9 @@ public class Movie implements Parcelable {
             parcel.writeDouble(popularity);
         }
         parcel.writeString(backdrop_path);
+        parcel.writeByte((byte) (bookmarked ? 1 : 0));
+        parcel.writeByte((byte) (state_popular ? 1 : 0));
     }
+
+
 }

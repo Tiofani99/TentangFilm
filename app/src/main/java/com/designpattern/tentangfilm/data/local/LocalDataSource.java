@@ -28,6 +28,10 @@ public class LocalDataSource {
         return movieDao.getAllMovie();
     }
 
+    public DataSource.Factory<Integer, Movie> getMoviePopular(){
+        return movieDao.getMoviePopular();
+    }
+
     public DataSource.Factory<Integer, Movie> getMovieFavorite(){
         return movieDao.getMovieFavorite();
     }
