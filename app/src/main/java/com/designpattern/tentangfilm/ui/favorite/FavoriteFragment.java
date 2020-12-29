@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +30,8 @@ public class FavoriteFragment extends Fragment implements FragmentCallback {
 
     @BindView(R.id.rv_movies)
     RecyclerView rvMovies;
+    @BindView(R.id.tv_information)
+    TextView tvInformation;
     FavoriteViewModel viewModel;
 
 
@@ -57,11 +60,11 @@ public class FavoriteFragment extends Fragment implements FragmentCallback {
         ViewModelFactory factory = ViewModelFactory.getInstance(getActivity().getApplication());
         viewModel = new ViewModelProvider(this, factory).get(FavoriteViewModel.class);
         viewModel.getMovieFavorite().observe(getViewLifecycleOwner(), movies -> {
-            if (movies.isEmpty()) {
-                Log.d("Tes","Alo");
+            adapter.submitList(movies);
+            if (!movies.isEmpty()) {
+                tvInformation.setVisibility(View.GONE);
             } else {
-                adapter.submitList(movies);
-                adapter.notifyDataSetChanged();
+                tvInformation.setVisibility(View.VISIBLE);
             }
         });
 
