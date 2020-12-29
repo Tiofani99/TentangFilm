@@ -10,7 +10,7 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
 
-    @GET("discover/movie")
+    @GET("movie/latest")
     Call<MovieResponse> getMovies(
             @Query("api_key") String apiKey
     );
@@ -27,7 +27,7 @@ public interface ApiInterface {
             @Query("api_key") String apiKey
     );
 
-    @GET("discover/movie/popular")
+    @GET("movie/popular")
     Call<MovieResponse> getMoviesPopular(
             @Query("api_key") String apiKey
     );

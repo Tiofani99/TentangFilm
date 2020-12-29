@@ -6,12 +6,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TentangFilm.NoActionBar">
-        <activity android:name=".ui.detail.DetailActivity"></activity>
+        <activity android:name=".ui.home.SeeMoreActivity"></activity>
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:theme="@style/Theme.TentangFilm.NoActionBarDetail" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

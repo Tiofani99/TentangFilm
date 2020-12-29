@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.designpattern.tentangfilm.menu.DrawerAdapter;
 import com.designpattern.tentangfilm.menu.DrawerItem;
 import com.designpattern.tentangfilm.menu.SimpleItem;
@@ -27,8 +26,6 @@ import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
 import java.util.Arrays;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
 
     private static final int POS_DASHBOARD = 0;
@@ -37,9 +34,6 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private String[] screenTitles;
     private Drawable[] screenIcons;
     private Toolbar toolbar;
-    private TextView tvProfile;
-    private TextView tvPhone;
-    private CircleImageView imageView;
     private TextView tv1;
 
 
@@ -63,17 +57,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
                 .withMenuLayout(R.layout.menu_left_drawer)
                 .inject();
 
-        tvProfile = findViewById(R.id.tv_user_name);
-        tvPhone = findViewById(R.id.tv_user_phone);
-        imageView = findViewById(R.id.iv_profile);
+
         tv1 = findViewById(R.id.textView);
 
-
-        tvProfile.setText("Tio Fani");
-        tvPhone.setText("+6282137138344");
-        Glide.with(this)
-                .load("https://avatars0.githubusercontent.com/u/43690617?s=400&u=48165381d83f691533aab341bb13d4f5a27e0725&v=4")
-                .into(imageView);
 
         screenIcons = loadScreenIcons();
         screenTitles = loadScreenTitles();
