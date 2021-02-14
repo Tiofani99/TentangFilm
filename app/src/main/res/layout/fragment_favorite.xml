@@ -17,16 +17,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="empty-state.json"
+        android:visibility="gone"
+        app:lottie_loop="true"
+        app:lottie_speed="1.25" />
+
     <TextView
         android:id="@+id/tv_information"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/you_haven_t_added_a_favorite_movie_yet"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/holo_blue_light"
         android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/lav_favorite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

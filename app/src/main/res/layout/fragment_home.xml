@@ -35,9 +35,9 @@
             android:id="@+id/rv_new_film"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:clipToPadding="true" />
+            android:clipToPadding="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Lihat Lainya"
+                android:text="Lihat Lainnya"
                 android:textColor="@color/second_text"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -79,9 +79,10 @@
             android:id="@+id/rv_popular_film"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:clipToPadding="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             tools:listitem="@layout/item_popular_film" />
 
     </LinearLayout>

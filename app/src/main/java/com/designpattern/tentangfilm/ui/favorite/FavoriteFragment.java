@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.designpattern.tentangfilm.R;
 import com.designpattern.tentangfilm.ui.FragmentCallback;
 import com.designpattern.tentangfilm.ui.home.PagedListNewMovieAdapter;
@@ -32,6 +33,8 @@ public class FavoriteFragment extends Fragment implements FragmentCallback {
     RecyclerView rvMovies;
     @BindView(R.id.tv_information)
     TextView tvInformation;
+    @BindView(R.id.lav_favorite)
+    LottieAnimationView lottieAnimationView;
     FavoriteViewModel viewModel;
 
 
@@ -63,8 +66,10 @@ public class FavoriteFragment extends Fragment implements FragmentCallback {
             adapter.submitList(movies);
             if (!movies.isEmpty()) {
                 tvInformation.setVisibility(View.GONE);
+                lottieAnimationView.setVisibility(View.GONE);
             } else {
                 tvInformation.setVisibility(View.VISIBLE);
+                lottieAnimationView.setVisibility(View.VISIBLE);
             }
         });
 
